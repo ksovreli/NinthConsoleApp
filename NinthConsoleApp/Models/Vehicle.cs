@@ -1,36 +1,49 @@
 ﻿namespace NinthConsoleApp.Models
 {
-    internal class Vehicle
+    internal class Car
     {
+        public int InitialFuel { get; set; }
         public int Fuel { get; set; }
+
+        public Car() { }
+
+        public Car(int InitialFuel)
+        {
+            this.InitialFuel = InitialFuel;
+        }
+
+        public Car (int InitialFuel, int Fuel)
+        {
+            this.InitialFuel = InitialFuel;
+            this.Fuel = Fuel;
+        }
 
         public void Drive()
         {
             if (Fuel > 0)
             {
-                Console.WriteLine("Vehicle is driving");
+                Console.WriteLine("Car is driving");
             }
 
             else
             {
-                Console.WriteLine("Vehicle stopped, no fuel!");
+                Console.WriteLine("Car stopped, no fuel!");
             }
         }
 
-
-        public int Refuel(int Fuelamount)
+        public int Refuel(int FuelAmount)
         {
-            if (Fuelamount > 0)
+            if (FuelAmount > 0)
             {
-                Fuel += Fuelamount;
-                Console.WriteLine($"Refueled with {Fuelamount} liters. current fuel is {Fuel}");
+                Fuel += FuelAmount;
+                Console.WriteLine($"Refueled with {FuelAmount}, current fuel is {Fuel}");
             }
 
             else
             {
-                Console.WriteLine("Invalid! amount should be positive!");
+                Console.WriteLine("Invalid! Amount should be positive!");
             }
-            return Fuel;    
+            return Fuel;
         }
     }
 }

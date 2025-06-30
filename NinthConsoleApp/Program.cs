@@ -3,7 +3,6 @@
 Car car = new Car(0);
 
 string input;
-
 int fuelAmount;
 
 
@@ -14,8 +13,10 @@ while (true)
 
     if (string.Equals(input, "exit", StringComparison.OrdinalIgnoreCase))
     {
+        Console.WriteLine("You pressed exit");
         break;
     }
+
 
     fuelAmount = Convert.ToInt32(input);
     car.Refuel(fuelAmount);
